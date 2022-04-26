@@ -41,7 +41,6 @@ function handleGuess(correctSpot, userGuess) {
     treeContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
     
-    // reset the styles
     if (correctSpot === userGuess) {
         correctGuesses++;
         totalGuesses++;
@@ -56,7 +55,11 @@ function handleGuess(correctSpot, userGuess) {
     } else {
         boulderContainer.classList.add('face');
     }
-
+    totalEl.textContent = totalGuesses;
+    winsEl.textContent = correctGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+    
+    // reset the styles
     // then increment the guesses
     // then grab the appropriate container element for the correct guess from the DOM
     // then add the face class to that element so that the face shows up
